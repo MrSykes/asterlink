@@ -327,7 +327,7 @@ func (a *amiConnector) onDialEnd(e map[string]string) {
 
 		c.Log.WithField("ext", c.Ext).Debug("Answer")
 		go a.connector.Answer(c, c.Ext)
-		break
+		//break
 	case connect.Out:
 		if c.O && !a.isContext(e["Context"], a.cfg.DP.Out) { // Originated call
 			return
@@ -362,7 +362,7 @@ func (a *amiConnector) onDialEnd(e map[string]string) {
 
 		go a.connector.Answer(c, rext[1])
 
-		break
+		//break
 	}
 }
 
