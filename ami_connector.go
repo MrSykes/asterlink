@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/MrSykes/asterlink/connect"
 	"github.com/ivahaev/amigo"
-	"github.com/serfreeman1337/asterlink/connect"
 	log "github.com/sirupsen/logrus"
 )
 

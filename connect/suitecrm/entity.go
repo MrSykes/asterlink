@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/serfreeman1337/asterlink/connect"
+	"github.com/MrSykes/asterlink/connect"
 	log "github.com/sirupsen/logrus"
 )
 

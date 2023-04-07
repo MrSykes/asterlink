@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/serfreeman1337/asterlink/connect"
+	"github.com/MrSykes/asterlink/connect"
 
 	"gopkg.in/yaml.v2"
 
