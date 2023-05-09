@@ -5,15 +5,31 @@ ami:
   user: admin
   pass: admin
   # port: 5038
+
+# Generic Asterisk dialplan  
+#dialplan:
+#  incoming_context:
+#  - from-pstn
+#  outgoing_context:
+#  - macro-dialout-trunk
+#  ext_context:
+#  - macro-dial-one
+#  - macro-dial
+#  dial_context: from-internal
+
+# VitalPBX dialplan
 dialplan:
   incoming_context:
-  - from-pstn
+  - trk-4-in
   outgoing_context:
-  - macro-dialout-trunk
+  - trk-4-out
   ext_context:
-  - macro-dial-one
-  - macro-dial
-  dial_context: from-internal
+  - trk-4-in
+  - ivr-only-extensions
+  - cos-Standard
+  - sub-local-dialing
+  dial_context: cos-Standard
+
 # pbx:
 #   dids:
 #   - '561600'

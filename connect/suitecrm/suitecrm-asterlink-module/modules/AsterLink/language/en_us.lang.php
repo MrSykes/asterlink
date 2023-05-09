@@ -10,7 +10,7 @@ $mod_strings = [
     'LBL_CONFIG_URL_TT' => 'For Click-to-call function. User\'s browser will send request to this URL on click.',
 
     'LBL_CONFIG_WS' => 'WebSocket URL',
-    'LBL_CONFIG_URL_TT' => 'For Pop up card function. User\'s browser will connect to this URL for pop-up card events listening.',
+    'LBL_CONFIG_WS_TT' => 'For Pop up card function. User\'s browser will connect to this URL for pop-up card events listening.',
 
     'LBL_CONFIG_RELS' => 'Relationships Settings',
 

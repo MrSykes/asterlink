@@ -215,6 +215,7 @@ func (a *amiConnector) onNewchannel(e map[string]string) {
 		Dir:      connect.In,
 		CID:      cID,
 		DID:      e["Exten"],
+		Ext:      e["Exten"],
 		TimeCall: time.Now(),
 		Ch:       e["Channel"],
 		Log:      log.WithField("lid", e["Linkedid"]),

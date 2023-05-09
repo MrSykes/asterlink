@@ -1,4 +1,4 @@
-<?php // serfreeman1337 // 15.06.21 //
+<?php // MrSykes // 08.05.23 //
 
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
@@ -53,8 +53,10 @@ switch ($action) {
 
             $fields = [];
 
+            // use MySQL 8.0+ REGEXP_REPLACE to remove non-numeric characters in the SUITECRM phone fields when matching the incomming CID
+            // this increases query time from .0301 seconds to .0360 seconds on a production database with over 4000 contact records
             foreach ($rel_config['phone_fields'] as $phone_field) {
-                $fields[] = "`$module_t`.`$phone_field` = '{$callBean->asterlink_cid_c}'";
+                $fields[] = "REGEXP_REPLACE(`$module_t`.`$phone_field`, '[^0-9]+', '') = '{$callBean->asterlink_cid_c}'";
             }
 
             $rel = BeanFactory::getBean($rel_config['module'])->get_list("", implode(' OR ', $fields), 0, 1);
