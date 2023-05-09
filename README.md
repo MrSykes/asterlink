@@ -29,8 +29,10 @@ dialplan:
 You see `DCS-Incoming` in `ext_context` because we are dialing **queue** extensions directly from incoming context.  
 (queue memeber config `member => PJSIP/1101` and not `member => Local/1101@Dial-Users` like in freepbx).
 
-Here is the configuration for [VitalPBX](https://vitalpbx.com/)
-# VitalPBX dialplan
+
+Here is the configuration for [VitalPBX](https://vitalpbx.com/) dialplan:
+# VitalPBX
+```yml
 dialplan:
   incoming_context:
   - trk-4-in
@@ -42,7 +44,7 @@ dialplan:
   - cos-Standard
   - sub-local-dialing
   dial_context: cos-Standard
-
+```
 ## CallerID Format
 Connector can format CallerID using regexp. This useful when your VoIP provider doesn't send desired format. 
 
