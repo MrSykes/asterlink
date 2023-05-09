@@ -1,3 +1,4 @@
+//go:build !suitecrm
 // +build !suitecrm
 
 package main
@@ -5,8 +6,8 @@ package main
 import (
 	"regexp"
 
-	"github.com/serfreeman1337/asterlink/connect"
-	"github.com/serfreeman1337/asterlink/connect/b24"
+	"github.com/MrSykes/asterlink/connect"
+	"github.com/MrSykes/asterlink/connect/b24"
 	"gopkg.in/yaml.v2"
 )
 

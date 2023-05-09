@@ -1,4 +1,4 @@
-module github.com/serfreeman1337/asterlink
+module github.com/MrSykes/asterlink
 
 go 1.18
 

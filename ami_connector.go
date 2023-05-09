@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/MrSykes/asterlink/connect"
 	"github.com/ivahaev/amigo"
-	"github.com/serfreeman1337/asterlink/connect"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -215,6 +215,7 @@ func (a *amiConnector) onNewchannel(e map[string]string) {
 		Dir:      connect.In,
 		CID:      cID,
 		DID:      e["Exten"],
+		Ext:      e["Exten"],
 		TimeCall: time.Now(),
 		Ch:       e["Channel"],
 		Log:      log.WithField("lid", e["Linkedid"]),
@@ -327,7 +328,7 @@ func (a *amiConnector) onDialEnd(e map[string]string) {
 
 		c.Log.WithField("ext", c.Ext).Debug("Answer")
 		go a.connector.Answer(c, c.Ext)
-		break
+		//break
 	case connect.Out:
 		if c.O && !a.isContext(e["Context"], a.cfg.DP.Out) { // Originated call
 			return
@@ -362,7 +363,7 @@ func (a *amiConnector) onDialEnd(e map[string]string) {
 
 		go a.connector.Answer(c, rext[1])
 
-		break
+		//break
 	}
 }
 

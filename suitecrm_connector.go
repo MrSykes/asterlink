@@ -1,10 +1,11 @@
+//go:build !b24
 // +build !b24
 
 package main
 
 import (
-	"github.com/serfreeman1337/asterlink/connect"
-	"github.com/serfreeman1337/asterlink/connect/suitecrm"
+	"github.com/MrSykes/asterlink/connect"
+	"github.com/MrSykes/asterlink/connect/suitecrm"
 	"gopkg.in/yaml.v2"
 )
 

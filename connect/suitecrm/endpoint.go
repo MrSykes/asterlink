@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/MrSykes/asterlink/connect"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/serfreeman1337/asterlink/connect"
 )
 
 func (s *suitecrm) assignedHandler(w http.ResponseWriter, r *http.Request) {

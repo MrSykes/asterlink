@@ -1,6 +1,6 @@
 # AsterLink
 Asterisk CRM Connector. 
-Supports FreePBX v14 integration with [Bitrix24](https://github.com/serfreeman1337/asterlink/blob/master/README_bitrix24.md) and [SuiteCRM](https://github.com/serfreeman1337/asterlink/blob/master/README_suitecrm.md).
+Supports FreePBX v14 and VitalPBX v3+ integration with [Bitrix24](https://github.com/MrSykes/asterlink/blob/master/README_bitrix24.md) and [SuiteCRM](https://github.com/MrSykes/asterlink/blob/master/README_suitecrm.md).
 
 # Asterisk
 You need Asterisk 13+.  
@@ -29,6 +29,22 @@ dialplan:
 You see `DCS-Incoming` in `ext_context` because we are dialing **queue** extensions directly from incoming context.  
 (queue memeber config `member => PJSIP/1101` and not `member => Local/1101@Dial-Users` like in freepbx).
 
+
+Here is the configuration for [VitalPBX](https://vitalpbx.com/) dialplan:
+# VitalPBX
+```yml
+dialplan:
+  incoming_context:
+  - trk-4-in
+  outgoing_context:
+  - trk-4-out
+  ext_context:
+  - trk-4-in
+  - ivr-only-extensions
+  - cos-Standard
+  - sub-local-dialing
+  dial_context: cos-Standard
+```
 ## CallerID Format
 Connector can format CallerID using regexp. This useful when your VoIP provider doesn't send desired format. 
 
@@ -41,8 +57,8 @@ If config is set and callerid doesn't matched any of regexp, then call will be i
 
 # CRM Integration
 See instructions in the following files:
-* [README_bitrix24.md](https://github.com/serfreeman1337/asterlink/blob/master/README_bitrix24.md) - For [Bitrix24](https://www.bitrix24.com/) Integration
-* [README_suitecrm.md](https://github.com/serfreeman1337/asterlink/blob/master/README_suitecrm.md) - For [SuiteCRM](https://suitecrm.com/) Integration
+* [README_bitrix24.md](https://github.com/MrSykes/asterlink/blob/master/README_bitrix24.md) - For [Bitrix24](https://www.bitrix24.com/) Integration
+* [README_suitecrm.md](https://github.com/MrSykes/asterlink/blob/master/README_suitecrm.md) - For [SuiteCRM](https://suitecrm.com/) Integration
 
 # Install
 Install asterlink under **/opt/asterlink** folder.
@@ -52,18 +68,18 @@ Install asterlink under **/opt/asterlink** folder.
   ```
 * Download binary from releases page
   ```bash
-  wget https://github.com/serfreeman1337/asterlink/releases/latest/download/asterlink_x86_64.tar.gz
+  wget https://github.com/MrSykes/asterlink/releases/latest/download/asterlink_x86_64.tar.gz
   tar xvf asterlink_x86_64.tar.gz && rm asterlink_x86_64.tar.gz
   chmod +x asterlink
   ```
   * Or build it from source (assume you have go installed)
   ```bash
-  go get github.com/serfreeman1337/asterlink
-  go build github.com/serfreeman1337/asterlink
+  go get github.com/MrSykes/asterlink
+  go build github.com/MrSykes/asterlink
   ```
 * Create configuration file. Use conf.example.yml as example.
   ```bash
-  wget https://raw.githubusercontent.com/serfreeman1337/asterlink/master/conf.example.yml
+  wget https://raw.githubusercontent.com/MrSykes/asterlink/master/conf.example.yml
   mv conf.example.yml conf.yml
   nano conf.yml
   ```
