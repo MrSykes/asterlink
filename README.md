@@ -29,8 +29,9 @@ dialplan:
 You see `DCS-Incoming` in `ext_context` because we are dialing **queue** extensions directly from incoming context.  
 (queue memeber config `member => PJSIP/1101` and not `member => Local/1101@Dial-Users` like in freepbx).
 
-Here is the configuration for [VitalPBX](https://vitalpbx.com/)
-# VitalPBX dialplan
+
+Here is the configuration for [VitalPBX](https://vitalpbx.com/) dialplan:
+# VitalPBX
 ```yml
 dialplan:
   incoming_context:
