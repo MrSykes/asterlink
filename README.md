@@ -37,7 +37,7 @@ dialplan:
   incoming_context:
   - trk-4-in
   outgoing_context:
-  - trk-4-out
+  - trk-4-dial
   ext_context:
   - trk-4-in
   - ivr-only-extensions
